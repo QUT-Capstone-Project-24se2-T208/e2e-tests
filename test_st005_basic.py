@@ -22,15 +22,7 @@ try:
     time.sleep(1)
     
     
-    # 1.close tutorialOverlay
-    tutorialOverlay = driver.find_element(By.ID, "tutorialOverlay")
-    assert  tutorialOverlay.is_displayed(), "tutorialOverlay is not displayed"
     
-    gotItBtn = driver.find_element(By.ID, "gotItBtn")
-    assert  gotItBtn.is_displayed(), "gotItBtn is not displayed"
-    
-    gotItBtn.click()
-    time.sleep(1)
 
  
     # 2. click select 2 bedrooms

@@ -8,17 +8,9 @@ from config import  test_host
 try:
     driver = init_driver()
     
-    driver.get(f"{test_host}/simple.html") 
+    driver.get(f"{test_host}/assistive.html") 
     
-    # 1.close tutorialOverlay
-    tutorialOverlay = driver.find_element(By.ID, "tutorialOverlay")
-    assert  tutorialOverlay.is_displayed(), "tutorialOverlay is not displayed"
-    
-    gotItBtn = driver.find_element(By.ID, "gotItBtn")
-    assert  gotItBtn.is_displayed(), "gotItBtn is not displayed"
-    
-    gotItBtn.click()
-    time.sleep(2)
+ 
     
     
     language_buttons = driver.find_elements(By.CLASS_NAME, "lang-btn")

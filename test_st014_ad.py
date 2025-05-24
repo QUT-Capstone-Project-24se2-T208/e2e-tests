@@ -19,6 +19,7 @@ try:
     assert len(step_items) == 5, "step-items is not 5, but " + str(len(step_items))
     assert "active" in step_items[0].get_attribute("class"), "step-items 0 is not active, but " + step_items[0].get_attribute("class")
     time.sleep(2)
+ 
     #  goto next step
     
     next_btn = driver.find_element(By.CLASS_NAME, "next-btn")  
@@ -59,12 +60,17 @@ try:
     assert "completed" in step_items[3].get_attribute("class"), "step-items 3 is not completed, but " + step_items[0].get_attribute("class")
     assert "active" in step_items[4].get_attribute("class"), "step-items 4 is not active, but " + step_items[0].get_attribute("class")
 
-
     results_popup = driver.find_element(By.ID, "results-popup")
     assert results_popup.is_displayed(), "results-popup is not displayed"
     
- 
-    time.sleep(3)
+    popup_close_btn = driver.find_element(By.ID, "popup-close-btn")
+    popup_close_btn.click() 
+    time.sleep(2)
+    
+    month_selector = driver.find_element(By.ID, "month-selector")
+    month_selector.send_keys("January")
+    time.sleep(5)
+
 
 finally:
     driver.quit()

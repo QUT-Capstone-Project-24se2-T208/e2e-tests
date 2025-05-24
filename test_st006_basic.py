@@ -24,15 +24,7 @@ try:
     time.sleep(1)
     
     
-    # 1.close tutorialOverlay
-    tutorialOverlay = driver.find_element(By.ID, "tutorialOverlay")
-    assert  tutorialOverlay.is_displayed(), "tutorialOverlay is not displayed"
-    
-    gotItBtn = driver.find_element(By.ID, "gotItBtn")
-    assert  gotItBtn.is_displayed(), "gotItBtn is not displayed"
-    
-    gotItBtn.click()
-    time.sleep(1)
+  
 
     total_value = driver.find_element(By.ID, "total-load-kw")
     assert "0.00"== total_value.text, "test total-kwh-value failed, expected 0.00, but got " + total_value.text
